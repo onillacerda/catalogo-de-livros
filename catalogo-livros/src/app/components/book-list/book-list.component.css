@@ -1,0 +1,29 @@
+.input {
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    background-color: #374151;
+    color: white;
+    width: 100%;
+    outline: none;
+  }
+  
+  .input:focus {
+    border: 2px solid #3b82f6;
+  }
+  
+  .btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    background-color: #16a34a;
+    transition: background-color 0.2s;
+    color: white;
+  }
+  
+  .btn:hover {
+    background-color: #15803d;
+  }
+  
+  table th, table td {
+    border: 1px solid #374151;
+  }
+  

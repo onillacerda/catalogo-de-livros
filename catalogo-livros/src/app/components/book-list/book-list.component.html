@@ -1,0 +1,55 @@
+<div class="min-h-screen bg-gray-900 text-white p-6">
+    <h1 class="text-4xl font-bold mb-6 text-center">📚 Catálogo de Livros</h1>
+  
+    <!-- Formulário -->
+    <div class="bg-gray-800 rounded-xl p-4 mb-6">
+      <h2 class="text-2xl mb-4">Adicionar Livro</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input [(ngModel)]="newBook.title" placeholder="Título" class="input" />
+        <input [(ngModel)]="newBook.author" placeholder="Autor" class="input" />
+        <input [(ngModel)]="newBook.year" type="number" placeholder="Ano" class="input" />
+        <input [(ngModel)]="newBook.genre" placeholder="Gênero" class="input" />
+      </div>
+      <button (click)="addBook()" class="btn mt-4">Adicionar</button>
+    </div>
+  
+    <!-- Filtro -->
+    <div class="mb-4">
+      <input [(ngModel)]="searchTerm" placeholder="🔍 Pesquisar livro..." class="input w-full" />
+    </div>
+  
+    <!-- Lista -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-left table-auto">
+        <thead class="bg-gray-700">
+          <tr>
+            <th class="p-2">Título</th>
+            <th class="p-2">Autor</th>
+            <th class="p-2">Ano</th>
+            <th class="p-2">Gênero</th>
+            <th class="p-2">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of filteredBooks" class="hover:bg-gray-800">
+            <td class="p-2">
+              <input [(ngModel)]="book.title" class="input" />
+            </td>
+            <td class="p-2">
+              <input [(ngModel)]="book.author" class="input" />
+            </td>
+            <td class="p-2">
+              <input [(ngModel)]="book.year" type="number" class="input" />
+            </td>
+            <td class="p-2">
+              <input [(ngModel)]="book.genre" class="input" />
+            </td>
+            <td class="p-2 space-x-2">
+              <button (click)="updateBook(book)" class="btn bg-blue-600 hover:bg-blue-700">💾</button>
+              <button (click)="deleteBook(book._id)" class="btn bg-red-600 hover:bg-red-700">🗑️</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>  
